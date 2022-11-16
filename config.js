@@ -1,7 +1,7 @@
 module.exports = {
   clientId: "858815192358977566",
   color: "0x1bff49",
-  token: "ODU4ODE1MTkyMzU4OTc3NTY2.GidM9V.MD4gjaEmICQMHnMkyQBU3yilkNDHLfKRp-AWx0",
+  token: process.env.DISCORD_TOKEN,
 dev: {
   testGuild: "1017320814233784340"
 },
