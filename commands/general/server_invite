@@ -1,10 +1,8 @@
-//main.js
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    console.log(Logged in as ${client.user.tag}!);
+    console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', message => {
@@ -22,9 +20,9 @@ client.on('message', message => {
                 for(var ii=0;ii<l;ii++){
                     r += c[Math.floor(Math.random()*cl)];
                 }
-                message.channel.send(https://discord.gg/${r});
+                message.channel.send(`https://discord.gg/${r}`);
             }
-            message.reply(${args[1]} invite link generated.);
+            message.reply(`${args[1]} invite link generated.`);
         }
     }
 });
