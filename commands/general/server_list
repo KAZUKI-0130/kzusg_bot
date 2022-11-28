@@ -1,0 +1,30 @@
+//main.js
+
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+    console.log(Logged in as ${client.user.tag}!);
+});
+
+client.on('message', message => {
+    const args = message.content.slice('').split(' ');
+    if(message.content.startsWith('生成')){
+        if(args[1] === undefined){
+            message.channel.send("Pleace enter a munber.");
+        }
+        else{
+            for(let i=0;i<args[1];i++){
+                var l = 8;
+                var c = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                var cl = c.length;
+                var r = "";
+                for(var ii=0;ii<l;ii++){
+                    r += c[Math.floor(Math.random()*cl)];
+                }
+                message.channel.send(https://discord.gg/${r});
+            }
+            message.reply(${args[1]} invite link generated.);
+        }
+    }
+});
