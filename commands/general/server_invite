@@ -1,10 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-});
-
 client.on('message', message => {
     const args = message.content.slice('').split(' ');
     if(message.content.startsWith('生成')){
