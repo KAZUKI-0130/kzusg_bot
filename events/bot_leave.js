@@ -6,7 +6,7 @@ const functions = require("../functions.js");
 module.exports = {
   name: "guildDelete",
   async execute(guild, client) {
-    client.user.setActivity({name: `${client.ws.ping}msで${client.guilds.cache.size}のサーバー`,type: "WATCHING"});
+    client.user.setActivity({name: `${client.guilds.cache.size}のサーバー`,type: "WATCHING"});
   const delEmbed = new Discord.MessageEmbed()
     .setTitle("サーバー退出")
     .setDescription(`${guild.name}(${guild.id})からBotが退出しました。`)
