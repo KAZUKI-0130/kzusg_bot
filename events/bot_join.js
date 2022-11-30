@@ -6,7 +6,7 @@ const functions = require("../functions.js");
 module.exports = {
   name: "guildCreate",
   async execute(guild, client) {
-    client.user.setActivity({name: `${client.ws.ping}msで${client.guilds.cache.size}のサーバー`,type: "WATCHING"});
+    client.user.setActivity({name: `${client.guilds.cache.size}のサーバー`,type: "WATCHING"});
   const addEmbed = new Discord.MessageEmbed()
     .setTitle("サーバー追加")
     .setDescription(`${guild.name}(${guild.id})にBotが追加されました。`)
