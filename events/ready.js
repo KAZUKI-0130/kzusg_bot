@@ -5,7 +5,7 @@ module.exports = {
   name: "ready", // イベント名
 
 async execute(client) {
-  client.user.setPresence({ activities: [{name: `${client.ws.ping}msで${client.guilds.cache.size}のサーバー`,type: "WATCHING"}], status: `online` });
+  client.user.setPresence({ activities: [{name: `${client.guilds.cache.size}のサーバー`,type: "WATCHING"}], status: `online` });
 
   client.channels.cache.get(config.logch.ready).send("`Botにログインしました！`");
 
