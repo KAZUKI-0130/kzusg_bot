@@ -116,15 +116,5 @@ app.listen(3000, () => {
   console.log(`Opened API Server`);
 });
 
-//ステメの自動更新
- client.on('ready', () => {
-   setInterval(() => {
-     client.user.setActivity({
-       name: `${client.ws.ping}msで${client.guilds.cache.size}のサーバー`,type: "WATCHING"
-     })
-   }, 5000)
- })
-
-
 // ログイン
 client.login(config.token);
