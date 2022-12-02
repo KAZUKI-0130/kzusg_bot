@@ -71,10 +71,8 @@ try {
     .setTimestamp()
     .setThumbnail(i.user.displayAvatarURL({ dynamic: true }))
     .addField("コマンド", "```\n" + `${command.data.name}` + "\n```")
-    .addField("実行サーバー", "```\n" + `${i.guild.name}` + 
-              `(${i.guild?.id ?? "DM"})` + "\n```", true)
-    .addField("実行ユーザー", "```\n" + `${i.user.tag}` + 
-              `(${i.user.id})` + "\n```", true)
+    .addField("実行サーバー", "```\n" + `${i.guild.name}` + /n + `(${i.guild?.id ?? "DM"})` + "\n```", true)
+    .addField("実行ユーザー", "```\n" + `${i.user.tag}` + /n + `(${i.user.id})` + "\n```", true)
     .setFooter("")
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
 } catch (error) {
