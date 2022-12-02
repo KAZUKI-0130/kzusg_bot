@@ -70,9 +70,9 @@ try {
     .setColor(config.color)
     .setTimestamp()
     .setThumbnail(i.user.displayAvatarURL({ dynamic: true }))
-    .addField("__Command__", "  \n" + `${command.data.name}` + "\n")
-    .addField("__Server__", "\n" + `${i.guild.name}(${i.guild?.id ?? "DM"})` + "\n", true)
-    .addField("__User__", "\n" + `${i.user.tag}(${i.user.id})` + "\n", true)
+    .addField("__Command__", "  \n" + ${command.data.name} + "\n")
+    .addField("__Server__", "\n" + ${i.guild.name}(${i.guild?.id ?? "DM"}) + "\n", true)
+    .addField("__User__", "\n" + ${i.user.tag}(${i.user.id}) + "\n", true)
     .setFooter({ text: String(i.id) })
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
     } catch (error) {
