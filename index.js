@@ -64,15 +64,15 @@ client.config = config;
 // 実行
 try {
   await command.execute(i, client);
-    const log = new Discord.MessageEmbed()
+  const log = new Discord.MessageEmbed()
     .setTitle("コマンド実行ログ")
     .setDescription("")
     .setColor(config.color)
-    .setTimestamp("")
-    .setThumbnail(i.user.displayAvatarURL({ dynamic: true }))
+    .setTimestamp()
+    .setThumbnail(i.user.displayAvatarURL({ dynamic: true }) 
     .addField("__command__", "\n" + i.toString() + "\n")
-    .addField("__server__", ```"\n" + `${i.guild.name} "\n" (${i.guild?.id ?? "DM"})` + "\n"```, true)
-    .addField("__user__", ```"\n" + `${i.user.tag} "\n" (${i.user.id})` + "\n"```, true)
+    .addField("__server__", "\n" + `${i.guild.name}(${i.guild?.id ?? "DM"})` + "\n", true)
+    .addField("__user__", "\n" + `${i.user.tag}(${i.user.id})` + "\n", true)
     .setFooter({ text: String(i.id) })
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
     } catch (error) {
