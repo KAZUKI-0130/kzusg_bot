@@ -8,7 +8,7 @@ module.exports = {
   async execute(guild, client) {
     client.user.setActivity({name: `${client.guilds.cache.size}servers`,type: "WATCHING"});
   const delEmbed = new Discord.MessageEmbed()
-    .setTitle("サーバー退出")
+    .setTitle("Bot_Leave")
     .setDescription(`NAME : ${guild.name}` + "\n" + `ID : ${guild.id}`)
     .setThumbnail(guild.iconURL({ dynamic: true }))
     .setColor(config.color)
