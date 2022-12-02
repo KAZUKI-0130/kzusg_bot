@@ -65,14 +65,15 @@ client.config = config;
 try {
   await command.execute(i, client);
   const log = new Discord.MessageEmbed()
-    .setTitle("**Commands_log**")
+    .setTitle("コマンド実行ログ")
     .setDescription()
     .setColor(config.color)
     .setTimestamp()
-    .setThumbnail(i.user.displayAvatarURL({ dynamic: true })) 
-    .addField("__command__" , "\n" + "${command.data.name}" + "\n" )
-    .addField("__server__" , "\n" + `NAME : ` + "${i.guild.name}" + "\n" + `ID : ` + "${i.guild?.id ?? "DM"}"+ "\n" , true)
-    .addField("__user__" , "\n" + `NAME : ` + "${i.user.tag}" + "\n" + `ID : ` + "${i.user.id}" +"\n" , true)
+    .setThumbnail(i.user.displayAvatarURL({ dynamic: true }))
+    .addField("__Command__", "  \n" + i.toString() + "\n")
+    .addField("__Server__", "\n" + `${i.guild.name}(${i.guild?.id ?? "DM"})` + "\n", true)
+    .addField("__User__", "\n" + `${i.user.tag}(${i.user.id})` + "\n", true)
+    .setFooter({ text: String(i.id) })
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
     } catch (error) {
   console.error(error);
