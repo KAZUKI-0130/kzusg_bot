@@ -73,7 +73,7 @@ try {
     .addField("__command__", "\n" + i.toString() + "\n")
     .addField("__server__", "\n" + `${i.guild.name}(${i.guild?.id ?? "DM"})` + "\n", true)
     .addField("__user__", "\n" + `${i.user.tag}(${i.user.id})` + "\n", true)
-    .setFooter({ text: String(i.id) })
+    .setFooter("")
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
     } catch (error) {
   console.error(error);
