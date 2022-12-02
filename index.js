@@ -77,8 +77,10 @@ try {
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
 } catch (error) {
   console.error(error);
+  }
  }
-});
+);
+
 // エラー処理
 process.on("uncaughtException", error => {
   console.error(`[${functions.timeToJST(Date.now(), true)}] ${error.stack}`);
