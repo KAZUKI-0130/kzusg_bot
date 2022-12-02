@@ -63,38 +63,24 @@ client.config = config;
 
 // 実行
 try {
-await command.execute(i, client);
-const log = new Discord.MessageEmbed()
-.setTitle("コマンド実行ログ")
-.setDescription(${i.user.tag}(${i.user.id}) \n がコマンドを実行しました。)
-.setColor(config.color)
-.setTimestamp()
-.setThumbnail(i.user.displayAvatarURL({ dynamic: true }))
-.addField("コマンド", \n ${command.data.name} \n)
-.addField("実行サーバー", \n ${i.guild.name} \n (${i.guild?.id ?? "DM"}) \n, true)
-.addField("実行ユーザー", \n ${i.user.tag} \n (${i.user.id}) \n, true)
-.setFooter("")
-client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
-} catch (error) {
-console.error(error);
-}
-});
-
-// 実行
-try {
   await command.execute(i, client);
-  const log = new Discord.MessageEmbed()
+    const log = new Discord.MessageEmbed()
     .setTitle("コマンド実行ログ")
-    .setDescription("user : "${i.user.tag}(${i.user.id}) \n "server : "${i.guild.name}(${i.guild?.id ?? "DM"}) \n "commands : "${command.data.name})
+    .setDescription("")
     .setColor(config.color)
     .setTimestamp()
-    .setFooter(``)
+    .setThumbnail(i.user.displayAvatarURL({ dynamic: true }))
+    .addField("__command__", "\n" + ````i.toString()```` + "\n")
+    .addField("__server__", "\n" + ````${i.guild.name} "\n" (${i.guild?.id ?? "DM"})```` + "\n", true)
+    .addField("__user__", "\n" + ````${i.user.tag} "\n" (${i.user.id})```` + "\n", true)
+    .setFooter({ text: String(i.id) })
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
-  } catch (error) {
-    console.error(error);
+    } catch (error) {
+  console.error(error);
   }
  }
 );
+
 
 // エラー処理
 process.on("uncaughtException", error => {
