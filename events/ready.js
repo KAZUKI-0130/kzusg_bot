@@ -9,7 +9,6 @@ async execute(client) {
 
   client.channels.cache.get(config.logch.ready).send("`Botにログインしました！`");
 
-    console.log(`[${functions.timeToJST(Date.now(), true)}] Logged in as 
-  ${client.user.tag}!`);
+    console.log(`Logged in as　${client.user.tag}!`);
  }
 }
