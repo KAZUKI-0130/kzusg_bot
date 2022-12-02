@@ -71,8 +71,8 @@ try {
     .setTimestamp()
     .setThumbnail(i.user.displayAvatarURL({ dynamic: true })) 
     .addField("__command__" , "\n" + "${command.data.name}" + "\n" )
-    .addField("__server__" , "\n" + "NAME : " + "${i.guild.name}" + "\n" + "ID : " + "${i.guild?.id ?? "DM"}"+ "\n" , true)
-    .addField("__user__" , "\n" + "NAME : " + "${i.user.tag}" + "\n" + "ID : " + "${i.user.id}" +"\n" , true)
+    .addField("__server__" , "\n" + `NAME : ` + "${i.guild.name}" + "\n" + `ID : ` + "${i.guild?.id ?? "DM"}"+ "\n" , true)
+    .addField("__user__" , "\n" + `NAME : ` + "${i.user.tag}" + "\n" + `ID : ` + "${i.user.id}" +"\n" , true)
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
     } catch (error) {
   console.error(error);
