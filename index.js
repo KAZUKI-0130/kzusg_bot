@@ -69,17 +69,16 @@ try {
     .setDescription("")
     .setColor(config.color)
     .setTimestamp()
-    .setThumbnail(i.user.displayAvatarURL({ dynamic: true }) 
-    .addField("__command__", "\n" + i.toString() + "\n")
-    .addField("__server__", "\n" + `${i.guild.name}(${i.guild?.id ?? "DM"})` + "\n", true)
-    .addField("__user__", "\n" + `${i.user.tag}(${i.user.id})` + "\n", true)
+    .setThumbnail(i.user.displayAvatarURL({ dynamic: true })) 
+    .addField("__command__" , "\n" + i.toString() + "\n")
+    .addField("__server__" , "\n" + `${i.guild.name} + "\n" +(${i.guild?.id ?? "DM"})` + "\n", true)
+    .addField("__user__" , "\n" + `${i.user.tag} + "\n" + (${i.user.id})` + "\n", true)
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
     } catch (error) {
   console.error(error);
   }
  }
 );
-
 
 // エラー処理
 process.on("uncaughtException", error => {
