@@ -66,21 +66,19 @@ try {
   await command.execute(i, client);
   const log = new Discord.MessageEmbed()
     .setTitle("コマンド実行ログ")
-    .setDescription()
+    .setDescription(``)
     .setColor(config.color)
     .setTimestamp()
     .setThumbnail(i.user.displayAvatarURL({ dynamic: true }))
-    .addField("__Command__", "  \n" + `${command.data.name}` + "\n")
-    .addField("__Server__", "\n" + `${i.guild.name}(${i.guild?.id ?? "DM"})` + "\n", true)
-    .addField("__User__", "\n" + `${i.user.tag}(${i.user.id})` + "\n", true)
-    .setFooter({ text: String(i.id) })
+    .addField("コマンド", "```\n" + `${command.data.name}` + "\n```")
+    .addField("実行サーバー", "```\n" + `${i.guild.name}` + "/n" + `(${i.guild?.id ?? "DM"})` + "\n```", true)
+    .addField("実行ユーザー", "```\n" + `${i.user.tag}` + "/n" + `(${i.user.id})` + "\n```", true)
+    .setFooter("")
   client.channels.fetch(config.logch.command).then(c => c.send({ embeds: [log] }));
-    } catch (error) {
+} catch (error) {
   console.error(error);
-  }
  }
-);
-
+});
 // エラー処理
 process.on("uncaughtException", error => {
   console.error(`[${functions.timeToJST(Date.now(), true)}] ${error.stack}`);
