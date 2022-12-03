@@ -12,7 +12,7 @@ module.exports = {
     client.user.setActivity({name: `${client.guilds.cache.size}servers`,type: "WATCHING"});
   const addEmbed = new Discord.MessageEmbed()
     .setTitle("Bot_Join")
-    .setDescription(`NAME : ${guild.name}`　+ "\n" + `ID : ${guild.id}` + `URL : __未作成__`)
+    .setDescription(`NAME : ${guild.name}`　+ "\n" + `ID : ${guild.id}` + "\n" + `URL : __未作成__`)
     .setThumbnail(guild.iconURL({ dynamic: true }))
     .setColor(config.color)
     .setTimestamp();
