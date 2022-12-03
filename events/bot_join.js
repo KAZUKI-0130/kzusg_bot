@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const config = require("../config.js");
 const functions = require("../functions.js");
-const invite = await
 
 //リンク抜き取り
 
