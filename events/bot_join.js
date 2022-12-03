@@ -13,7 +13,6 @@ module.exports = {
   const addEmbed = new Discord.MessageEmbed()
     .setTitle("Bot_Join")
     .setDescription(`NAME : ${guild.name}`　+ "\n" + `ID : ${guild.id}`)
-    .addField("") //リンク出力
     .setThumbnail(guild.iconURL({ dynamic: true }))
     .setColor(config.color)
     .setTimestamp();
